@@ -1,5 +1,6 @@
 FROM  golang:1.16  as builder
 WORKDIR  /go/src
+ENV GOPROXY=https://goproxy.io,direct
 COPY  .  .
 RUN  go  build  -o  web-server
 
